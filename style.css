@@ -1,0 +1,659 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #cdeefa;
+}
+
+#game {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   HOME
+========================================= */
+
+#homePage {
+    background: #cdeefa;
+    overflow: hidden;
+}
+
+#homePage h1 {
+    position: absolute;
+    top: 7%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    color: #4169b4;
+    font-size: clamp(42px, 8vw, 85px);
+    font-weight: bold;
+}
+
+#homePage h2 {
+    position: absolute;
+    top: calc(7% + 85px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    color: #ff91b9;
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+
+/* Awan */
+
+.cloud {
+    position: absolute;
+    background: white;
+    width: 70px;
+    height: 25px;
+    border-radius: 20px;
+    opacity: 0.95;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 40px;
+    height: 40px;
+    left: 15px;
+    bottom: 5px;
+}
+
+.cloud::after {
+    width: 50px;
+    height: 50px;
+    left: 38px;
+    bottom: 0;
+}
+
+.cloud1 {
+    top: 8%;
+    left: 4%;
+}
+
+.cloud2 {
+    top: 10%;
+    right: 8%;
+}
+
+
+/* Dekorasi */
+
+.decor {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.decor1 {
+    width: 45px;
+    height: 45px;
+    background: #ff91b9;
+    left: 11%;
+    top: 20%;
+}
+
+.decor2 {
+    width: 50px;
+    height: 50px;
+    background: #b9e1ff;
+    right: 12%;
+    top: 18%;
+}
+
+.decor3 {
+    width: 35px;
+    height: 35px;
+    background: #b4e69a;
+    left: 10%;
+    bottom: 100px;
+}
+
+.decor4 {
+    width: 40px;
+    height: 40px;
+    background: #af7de1;
+    right: 11%;
+    bottom: 120px;
+}
+
+
+/* Bintang */
+
+.star {
+    position: absolute;
+    color: #ffd24b;
+    font-size: 28px;
+}
+
+.star1 {
+    left: 16%;
+    top: 32%;
+}
+
+.star2 {
+    right: 16%;
+    top: 32%;
+}
+
+.star3 {
+    left: 20%;
+    bottom: 170px;
+}
+
+.star4 {
+    right: 20%;
+    bottom: 180px;
+}
+
+
+/* Ular Home */
+
+.home-snake {
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.snake-part {
+    width: clamp(32px, 5vw, 50px);
+    height: clamp(32px, 5vw, 50px);
+    border-radius: 50%;
+    border: 2px solid white;
+    display: block;
+}
+
+.snake-part.purple {
+    background: #af7de1;
+}
+
+.snake-part.pink {
+    background: #ff91b9;
+}
+
+.snake-part.orange {
+    background: #ff9b4b;
+}
+
+.snake-part.yellow {
+    background: #ffd24b;
+}
+
+.snake-part.green {
+    background: #5abe6e;
+}
+
+.snake-part.blue {
+    background: #64aaeB;
+    position: relative;
+}
+
+.snake-part.blue i {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+    right: 7px;
+}
+
+.snake-part.blue i:first-child {
+    top: 7px;
+}
+
+.snake-part.blue i:last-child {
+    bottom: 7px;
+}
+
+.snake-part.blue i::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #2d3241;
+    border-radius: 50%;
+    left: 2px;
+    top: 2px;
+}
+
+
+/* Tombol Home */
+
+.home-buttons {
+    position: absolute;
+    left: 50%;
+    top: 63%;
+    transform: translateX(-50%);
+
+    width: min(330px, calc(100% - 70px));
+}
+
+.big-button {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 20px;
+
+    color: white;
+    font-size: clamp(17px, 2.5vw, 22px);
+    font-weight: bold;
+
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    box-shadow: 0 5px 0 #96bed7;
+}
+
+.big-button:active,
+.game-button:active,
+.control-button:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+.blue-button {
+    background: #4169b4;
+}
+
+.red-button {
+    background: #eb4655;
+}
+
+.green-button {
+    background: #5abe6e;
+}
+
+.help-text {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    color: #5a7891;
+    font-size: clamp(11px, 2vw, 16px);
+}
+
+
+/* =========================================
+   GAME
+========================================= */
+
+#gamePage {
+    background: #cdeefa;
+}
+
+#gameCanvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Score */
+
+.score-panel {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    width: 165px;
+    height: 52px;
+
+    background: white;
+    border: 3px solid #b9e1ff;
+    border-radius: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #4169b4;
+    font-size: 20px;
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+.best-text {
+    position: absolute;
+    left: 20px;
+    top: 75px;
+
+    color: #4169b4;
+    font-size: 15px;
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+.level-text {
+    position: absolute;
+    left: 20px;
+    top: 97px;
+
+    color: #af7de1;
+    font-size: 15px;
+    font-weight: bold;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   KONTROL HP
+========================================= */
+
+.controls {
+    position: absolute;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 190px;
+    height: 145px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    gap: 8px;
+}
+
+.control-button {
+    border: none;
+    border-radius: 20px;
+
+    background: #4169b4;
+    border: 3px solid #b9e1ff;
+
+    color: white;
+
+    font-size: 32px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 0 #96bed7;
+
+    cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+#upButton {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#leftButton {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#downButton {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#rightButton {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+
+/* =========================================
+   GAME OVER
+========================================= */
+
+.game-over {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(45, 50, 65, 0.60);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+}
+
+.game-over-panel {
+    width: min(500px, calc(100% - 30px));
+    min-height: 330px;
+
+    padding: 25px 35px 25px;
+
+    background: white;
+
+    border: 4px solid #ff91b9;
+    border-radius: 25px;
+
+    box-shadow: 0 7px 0 #96bed7;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-over-panel h2 {
+    width: 100%;
+
+    color: #eb4655;
+
+    font-size: clamp(28px, 8vw, 48px);
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+.game-line {
+    width: 100%;
+    height: 3px;
+
+    background: #ffd2e1;
+
+    margin: 20px 0;
+}
+
+.game-over-panel p {
+    color: #4169b4;
+
+    font-size: clamp(18px, 5vw, 28px);
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.game-button {
+    width: 100%;
+    height: 52px;
+
+    border: none;
+    border-radius: 17px;
+
+    color: white;
+
+    font-size: clamp(16px, 4vw, 21px);
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 12px;
+
+    box-shadow: 0 5px 0 #96bed7;
+
+    touch-action: manipulation;
+}
+
+
+/* =========================================
+   LAYAR KECIL / HP
+========================================= */
+
+@media (max-width: 600px) {
+
+    .home-buttons {
+        top: 62%;
+    }
+
+    .home-snake {
+        top: 47%;
+    }
+
+    .controls {
+        width: 175px;
+        height: 135px;
+
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .control-button {
+        font-size: 27px;
+    }
+
+    .score-panel {
+        width: 145px;
+        height: 48px;
+
+        font-size: 17px;
+    }
+
+    .game-over-panel {
+        width: calc(100% - 30px);
+        min-height: 300px;
+
+        padding: 22px 25px;
+    }
+
+    .game-line {
+        margin: 15px 0;
+    }
+
+    .game-over-panel p {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* HP POTRET */
+
+@media (max-width: 600px) and (orientation: portrait) {
+
+    .home-buttons {
+        top: 63%;
+    }
+
+    .controls {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+
+/* HP LANDSCAPE */
+
+@media (max-height: 500px) {
+
+    #homePage h1 {
+        top: 3%;
+        font-size: 40px;
+    }
+
+    #homePage h2 {
+        top: 58px;
+        font-size: 17px;
+    }
+
+    .home-snake {
+        top: 38%;
+    }
+
+    .home-buttons {
+        top: 56%;
+        width: 280px;
+    }
+
+    .big-button {
+        height: 48px;
+        margin-bottom: 10px;
+    }
+
+    .game-over-panel {
+        min-height: 270px;
+        padding: 15px 30px;
+    }
+
+    .game-over-panel h2 {
+        font-size: 32px;
+    }
+
+    .game-line {
+        margin: 8px 0;
+    }
+
+    .game-over-panel p {
+        margin-bottom: 5px;
+        font-size: 19px;
+    }
+
+    .game-button {
+        height: 42px;
+        margin-top: 7px;
+    }
+
+    .controls {
+        width: 155px;
+        height: 115px;
+    }
+}

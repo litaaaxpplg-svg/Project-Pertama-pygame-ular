@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cute Snake Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game">
+
+        <!-- ================= HOME ================= -->
+        <div id="homePage" class="page">
+
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+
+            <div class="decor decor1"></div>
+            <div class="decor decor2"></div>
+            <div class="decor decor3"></div>
+            <div class="decor decor4"></div>
+
+            <div class="star star1">✦</div>
+            <div class="star star2">✦</div>
+            <div class="star star3">✦</div>
+            <div class="star star4">✦</div>
+
+            <h1>SNAKE</h1>
+            <h2>Cute Snake Adventure</h2>
+
+            <div class="home-snake">
+                <span class="snake-part purple"></span>
+                <span class="snake-part pink"></span>
+                <span class="snake-part orange"></span>
+                <span class="snake-part yellow"></span>
+                <span class="snake-part green"></span>
+                <span class="snake-part blue">
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+
+            <div class="home-buttons">
+                <button id="startButton" class="big-button blue-button">
+                    MULAI GAME
+                </button>
+
+                <button id="exitHomeButton" class="big-button red-button">
+                    KELUAR
+                </button>
+            </div>
+
+            <p class="help-text">
+                WASD • PANAH • TOMBOL LAYAR
+            </p>
+        </div>
+
+
+        <!-- ================= GAME ================= -->
+        <div id="gamePage" class="page hidden">
+
+            <canvas id="gameCanvas"></canvas>
+
+            <div class="score-panel">
+                <span id="scoreText">SKOR 0</span>
+            </div>
+
+            <div class="best-text">
+                BEST <span id="bestText">0</span>
+            </div>
+
+            <div class="level-text">
+                LEVEL <span id="levelText">1</span>
+            </div>
+
+            <!-- Tombol kontrol HP -->
+            <div class="controls">
+
+                <button id="upButton" class="control-button">
+                    ↑
+                </button>
+
+                <button id="leftButton" class="control-button">
+                    ←
+                </button>
+
+                <button id="downButton" class="control-button">
+                    ↓
+                </button>
+
+                <button id="rightButton" class="control-button">
+                    →
+                </button>
+
+            </div>
+
+            <!-- ================= GAME OVER ================= -->
+            <div id="gameOver" class="game-over hidden">
+
+                <div class="game-over-panel">
+
+                    <h2>GAME OVER</h2>
+
+                    <div class="game-line"></div>
+
+                    <p>
+                        SKOR AKHIR :
+                        <span id="finalScore">0</span>
+                    </p>
+
+                    <button id="restartButton" class="game-button green-button">
+                        MAIN LAGI
+                    </button>
+
+                    <button id="exitGameButton" class="game-button red-button">
+                        KELUAR
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
