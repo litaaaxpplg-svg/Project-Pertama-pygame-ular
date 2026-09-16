@@ -1,0 +1,362 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.halaman {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* ================= HOME ================= */
+
+#home {
+    position: relative;
+    background: #cdebf8;
+    text-align: center;
+    overflow: hidden;
+}
+
+#home h1 {
+    padding-top: 7vh;
+    font-size: clamp(45px, 8vw, 90px);
+    color: #4169a8;
+}
+
+#home h2 {
+    margin-top: 5px;
+    color: #ff91b9;
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+/* ================= AWAN ================= */
+
+.awan {
+    position: absolute;
+    width: 90px;
+    height: 35px;
+    background: white;
+    border-radius: 30px;
+}
+
+.awan::before,
+.awan::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.awan::before {
+    width: 45px;
+    height: 45px;
+    left: 15px;
+    bottom: 5px;
+}
+
+.awan::after {
+    width: 55px;
+    height: 55px;
+    right: 5px;
+    bottom: 5px;
+}
+
+.awan1 {
+    left: 40px;
+    top: 60px;
+}
+
+.awan2 {
+    right: 60px;
+    top: 80px;
+}
+
+/* ================= DEKORASI ================= */
+
+.dekorasi {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.dekorasi.pink {
+    width: 80px;
+    height: 80px;
+    left: 8%;
+    top: 20%;
+    background: #ff91b9;
+}
+
+.dekorasi.biru {
+    width: 90px;
+    height: 90px;
+    right: 8%;
+    top: 18%;
+    background: #b9e1ff;
+}
+
+.dekorasi.hijau {
+    width: 60px;
+    height: 60px;
+    left: 10%;
+    bottom: 100px;
+    background: #b4e69a;
+}
+
+.dekorasi.ungu {
+    width: 70px;
+    height: 70px;
+    right: 10%;
+    bottom: 120px;
+    background: #af7de1;
+}
+
+/* ================= ULAR HOME ================= */
+
+.ular-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    height: 90px;
+}
+
+.ular-home .badan,
+.ular-home .kepala {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: -2px;
+}
+
+.ular-home .ungu {
+    background: #af7de1;
+}
+
+.ular-home .pink {
+    background: #ff91b9;
+}
+
+.ular-home .orange {
+    background: #ff9b4b;
+}
+
+.ular-home .kuning {
+    background: #ffd24b;
+}
+
+.ular-home .hijau {
+    background: #5abe6e;
+}
+
+.ular-home .kepala {
+    background: #64aaf0;
+    position: relative;
+}
+
+/* mata ular */
+.ular-home .kepala::before,
+.ular-home .kepala::after {
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+    top: 10px;
+}
+
+.ular-home .kepala::before {
+    left: 10px;
+}
+
+.ular-home .kepala::after {
+    right: 10px;
+}
+
+/* ================= BUTTON ================= */
+
+#home button {
+    display: block;
+    width: min(330px, 80%);
+    height: 60px;
+    margin: 15px auto;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+#mulai {
+    background: #4169a8;
+    box-shadow: 0 5px #96bed7;
+}
+
+#keluar {
+    background: #eb4655;
+    box-shadow: 0 5px #dcb0bd;
+}
+
+#home button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+.petunjuk {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    color: #5a7891;
+    font-size: 15px;
+}
+
+/* ================= GAME ================= */
+
+#game {
+    position: relative;
+    background: #cdebf8;
+}
+
+#canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* ================= SKOR ================= */
+
+#skor {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    padding: 12px 25px;
+    background: white;
+    border: 3px solid #b9e1ff;
+    border-radius: 17px;
+    color: #4169a8;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ================= KONTROL ================= */
+
+.kontrol {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    text-align: center;
+}
+
+.kontrol button {
+    width: 65px;
+    height: 65px;
+    margin: 4px;
+    border: 3px solid #b9e1ff;
+    border-radius: 20px;
+    background: #4169a8;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 5px #96bed7;
+    touch-action: manipulation;
+}
+
+.kontrol button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* ================= GAME OVER ================= */
+
+.game-over {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 50, 65, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-gameover {
+    width: min(500px, 85%);
+    min-height: 300px;
+    padding: 30px;
+    background: white;
+    border: 4px solid #ff91b9;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 7px #96bed7;
+}
+
+.panel-gameover h2 {
+    color: #eb4655;
+    font-size: clamp(30px, 6vw, 50px);
+}
+
+.garis {
+    width: 80%;
+    height: 3px;
+    background: #ffd2e1;
+    margin: 25px auto;
+}
+
+.panel-gameover h3 {
+    color: #4169a8;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.panel-gameover p {
+    margin: 12px;
+    color: #7d5db0;
+    font-size: 17px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+    #home h1 {
+        padding-top: 5vh;
+    }
+
+    .ular-home {
+        margin: 20px auto;
+    }
+
+    .ular-home .badan,
+    .ular-home .kepala {
+        width: 38px;
+        height: 38px;
+    }
+
+    #home button {
+        height: 55px;
+    }
+
+    #skor {
+        font-size: 17px;
+        padding: 9px 15px;
+    }
+
+    .kontrol button {
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+    }
+
+    .kontrol {
+        right: 10px;
+        bottom: 10px;
+    }
+}
